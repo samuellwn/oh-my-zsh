@@ -1,5 +1,5 @@
 # current directory
-local dir="${fg[blue]}%~${reset_colors}"
+local _dir="${fg[blue]}%~${reset_colors}"
 
 # name of the machine
 local machine="%m"
@@ -23,7 +23,7 @@ local jobs="${fg[blue]}jobs: %j${reset_colors}"
 local time="%t"
 
 # current date
-local date="%W"
+local _date="%W"
 
 # turns the color of the text passed in green or red depending on the last return value
 local return_value_color = function () {
@@ -41,10 +41,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 # main prompt contains all information that makes sense
 export PS1="
-${time} ${date} ${jobs} ${tty} $(git_prompt_info)
-${username}@${machine} ${return_value} ${dir}
+${time} ${_date} ${jobs} ${tty} $(git_prompt_info)
+${username}@${machine} ${return_value} ${_dir}
 ${privilege}${fg[green]}>${reset_colors}"
 
 # subprompt contains time and parser status
-export PS2="${_time} ${_pstat}"
+export PS2="${time} ${pstat}"
 
