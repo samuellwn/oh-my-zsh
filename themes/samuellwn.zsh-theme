@@ -20,9 +20,7 @@ local _pstat="%_"
 local _jobs="${fg[blue]}jobs: %j${reset_colors}"
 
 # current time
-local _time="%t"retvalcolor = function () {
-    echo "%{%(0?.${fg[green]}.${fg[red]})%}${1}%{${reset_color}%}"
-}
+local _time="%t"
 
 # current date
 local _date="%W"
