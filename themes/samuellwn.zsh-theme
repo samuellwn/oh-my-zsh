@@ -33,6 +33,7 @@ local retvalcolor = function () {
 # return value of last command
 local retval="$(retvalcolor %?)"
 
+# git info
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
@@ -40,5 +41,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 # main prompt contains all information that makes sense
 export PS1="
+${time} ${date} ${jobs} ${tty} $(git_prompt_info)
 ${username}@${machine} ${retval} ${dir}
 ${privilege}${fg[green]}>${reset_colors}"
+
+# subprompt contains time and parser status
+export PS2="${time} ${pstat}"
+
