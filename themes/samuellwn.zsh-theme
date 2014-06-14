@@ -2,36 +2,36 @@
 local _dir="${fg[blue]}%~${reset_colors}"
 
 # name of the machine
-local _machine="%m"
+local machine="%m"
 
 # current username
-local _username="%n"
+local username="%n"
 
 # tty the user is logged into
-local _tty="${fg[blue]}tty: %y${reset_colors}"
+local tty="${fg[blue]}tty: %y${reset_colors}"
 
 # # or % depending on privileges
-local _privilege="${fg[green]}%#${reset_colors}"
+local privilege="${fg[green]}%#${reset_colors}"
 
 # status of the parser
-local _pstat="%_"
+local pstat="%_"
 
 # number of jobs
-local _jobs="${fg[blue]}jobs: %j${reset_colors}"
+local jobs="${fg[blue]}jobs: %j${reset_colors}"
 
 # current time
-local _time="%t"
+local time="%t"
 
 # current date
 local _date="%W"
 
 # turns the color of the text passed in green or red depending on the last return value
-local _retvalcolor = function () {
+local return_value_color = function () {
     echo "%{%(0?.${fg[green]}.${fg[red]})%}${1}%{${reset_color}%}"
 }
 
 # return value of last command
-local _retval="$(_retvalcolor %?)"
+local return_value="$(return_value_color %?)"
 
 # git info
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
@@ -41,10 +41,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 # main prompt contains all information that makes sense
 export PS1="
-${_time} ${_date} ${_jobs} ${_tty} $(git_prompt_info)
-${_username}@${_machine} ${_retval} ${_dir}
-${_privilege}${fg[green]}>${reset_colors}"
+${time} ${_date} ${jobs} ${tty} $(git_prompt_info)
+${username}@${machine} ${return_value} ${_dir}
+${privilege}${fg[green]}>${reset_colors}"
 
 # subprompt contains time and parser status
-export PS2="${_time} ${_pstat}"
+export PS2="${time} ${pstat}"
 
