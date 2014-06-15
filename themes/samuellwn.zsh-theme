@@ -26,12 +26,12 @@ local time="%t"
 local _date="%W"
 
 # turns the color of the text passed in green or red depending on the last return value
-local return_value_color = function () {
-    echo "%{%(0?.${fg[green]}.${fg[red]})%}${1}%{${reset_color}%}"
-}
+#local return_value_color = function () {
+#    "%{%(0?.${fg[green]}.${fg[red]})%}${1}%{${reset_color}%}"
+#}
 
 # return value of last command
-local return_value="$(return_value_color %?)"
+local return_value="%{%(0?.${fg[green]}.${fg[red]})%}%?%{${reset_color}%}"
 
 # git info
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
