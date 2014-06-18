@@ -1,33 +1,34 @@
 # current directory
-local _dir="${fg[blue]}%~${reset_colors}"
+local _dir="${fg[red]}%~${reset_color}"
 
 # name of the machine
-local machine="%m"
+local machine="${fg[red]}%m${reset_color}"
 
 # current username
-local username="%n"
+local username="${fg[red]}%n${reset_color}"
 
 # tty the user is logged into
-local tty="${fg[blue]}tty: %y${reset_colors}"
+local tty="${fg[blue]}tty: ${fg[red]}%l${reset_color}"
 
 # # or % depending on privileges
-local privilege="${fg[green]}%#${reset_colors}"
+local privilege="${fg[green]}%#${reset_color}"
 
 # status of the parser
 local pstat="%_"
 
 # number of jobs
-local jobs="${fg[blue]}jobs: %j${reset_colors}"
+local jobs="${fg[blue]}jobs: ${fg[red]}%j${reset_color}"
 
 # current time
-local time="%t"
+local time="${fg[red]}%t${reset_color}"
 
 # current date
-local _date="%W"
+local _date="${fg[red]}%W${reset_color}"
 
-# turns the color of the text passed in green or red depending on the last return value
+# turns the color of the text passed in green or red depending on the last
+# return value (this code comment out due to possible zsh bug)
 #local return_value_color = function () {
-#    "%{%(0?.${fg[green]}.${fg[red]})%}${1}%{${reset_color}%}"
+#    echo "%{%(0?.${fg[green]}.${fg[red]})%}${1}%{${reset_color}%}"
 #}
 
 # return value of last command
@@ -43,7 +44,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 export PS1="
 ${time} ${_date} ${jobs} ${tty} $(git_prompt_info)
 ${username}@${machine} ${return_value} ${_dir}
-${privilege}${fg[green]}>${reset_colors}"
+${privilege}${fg[green]}>${reset_color}"
 
 # subprompt contains time and parser status
 export PS2="${time} ${pstat}"
