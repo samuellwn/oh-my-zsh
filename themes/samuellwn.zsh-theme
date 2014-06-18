@@ -1,29 +1,29 @@
 # current directory
-local _dir="${fg[red]}%~${reset_color}"
+local _dir="%{${fg[red]}%}%~%{${reset_color}%}"
 
 # name of the machine
-local machine="${fg[red]}%m${reset_color}"
+local machine="%{${fg[red]}%}%m%{${reset_color}%}"
 
 # current username
-local username="${fg[red]}%n${reset_color}"
+local username="%{${fg[red]}%}%n%{${reset_color}%}"
 
 # tty the user is logged into
-local tty="${fg[blue]}tty: ${fg[red]}%l${reset_color}"
+local tty="%{${fg[blue]}%}tty: %{${fg[red]}%}%l${reset_color}%}"
 
 # # or % depending on privileges
-local privilege="${fg[green]}%#${reset_color}"
+local privilege="%{${fg[green]}%}%#%{${reset_color}%}"
 
 # status of the parser
 local pstat="%_"
 
 # number of jobs
-local jobs="${fg[blue]}jobs: ${fg[red]}%j${reset_color}"
+local jobs="%{${fg[blue]}%}jobs: %{${fg[red]}%}%j%{${reset_color}%}"
 
 # current time
-local time="${fg[red]}%t${reset_color}"
+local time="%{${fg[red]}%}%t%{${reset_color}%}"
 
 # current date
-local _date="${fg[red]}%W${reset_color}"
+local _date="%{${fg[red]}%}%W%{${reset_color}%}"
 
 # turns the color of the text passed in green or red depending on the last
 # return value (this code comment out due to possible zsh bug)
