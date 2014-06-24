@@ -44,7 +44,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 export PS1="
 ${time} ${_date} ${jobs} ${tty} $(git_prompt_info)
 ${username}@${machine} ${return_value} ${_dir}
-${privilege}${fg[green]}>${reset_color}"
+${privilege}%{${fg[green]}%}>%{${reset_color}%}"
 
 # subprompt contains time and parser status
 export PS2="${time} ${pstat}"
