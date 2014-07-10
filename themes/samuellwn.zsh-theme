@@ -20,7 +20,7 @@ local pstat="%_"
 local jobs="%{${fg[blue]}%}jobs: %{${fg[red]}%}%j%{${reset_color}%}"
 
 # current time
-local time="%{${fg[red]}%}%t%{${reset_color}%}"
+local time="%{${fg[red]}%}%D{%I:%M%p}%{${reset_color}%}"
 
 # current date
 local _date="%{${fg[red]}%}%W%{${reset_color}%}"
