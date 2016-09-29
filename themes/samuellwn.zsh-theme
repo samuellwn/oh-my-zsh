@@ -35,10 +35,10 @@ local _date="%{${fg[red]}%}%W%{${reset_color}%}"
 local return_value="%{%(0?.${fg[green]}.${fg[red]})%}%?%{${reset_color}%}"
 
 # git info
-ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}git: %{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # main prompt contains all information that makes sense
 export PS1="
