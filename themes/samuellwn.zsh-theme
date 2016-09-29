@@ -23,7 +23,7 @@ local jobs="%{${fg[blue]}%}jobs: %{${fg[red]}%}%j%{${reset_color}%}"
 local time="%{${fg[red]}%}%D{%I:%M%p}%{${reset_color}%}"
 
 # current date
-local _date="%{${fg[red]}%}%W%{${reset_color}%}"
+local _date="%{${fg[red]}%}%D{%B %f, %Y (%m/%d/%Y)}%{${reset_color}%}"
 
 # turns the color of the text passed in green or red depending on the last
 # return value (this code comment out due to possible zsh bug)
