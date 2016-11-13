@@ -35,18 +35,18 @@ local _date="%{${fg[red]}%}%D{%B %f, %Y (%m/%d/%Y)}%{${reset_color}%}"
 local return_value="%{%(0?.${fg[green]}.${fg[red]})%}%?%{${reset_color}%}"
 
 # git info
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}git: %{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[blue]%}git: %{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # python virtualenv info
-ZSH_THEME_VIRTUALENV_PREFIX="%{$fg[blue]%}python venv: %{$fg[red]%}"
+ZSH_THEME_VIRTUALENV_PREFIX=" %{$fg[blue]%}python venv: %{$fg[red]%}"
 ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
 
 # main prompt contains all information that makes sense
 export PS1="
-${time} ${_date} ${jobs} ${tty} \$(git_prompt_info) \$(virtualenv_prompt_info)
+${time} ${_date} ${jobs} ${tty}\$(git_prompt_info)\$(virtualenv_prompt_info)
 ${username}@${machine} ${return_value} ${_dir}
 ${privilege}%{${fg[green]}%}>%{${reset_color}%}"
 
